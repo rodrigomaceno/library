@@ -85,6 +85,8 @@ SELECT * from Accounts;
 INSERT INTO Preferences(`favoriteBooks`, `favoriteDVDs`, `favoriteCDs` ) VALUES ('Harry Potter', 'Titanic, Spider-man 2, Alien', 'Nevermind, A Hard Day\'s Night');
 INSERT INTO Preferences(`favoriteBooks`, `favoriteDVDs`, `favoriteCDs` ) VALUES ('The Lord of the rings', 'Avatar, Spider-man 3', 'Appetite for destruction, The Cars');
 
+
+
 SELECT *
 FROM Accounts a 
 JOIN Preferences p ON p.idPreferences = a.idPreferences
