@@ -1,100 +1,83 @@
-INSERT INTO Accounts(`status`) VALUES (1);
-INSERT INTO Users(`name`, `phoneNumber`,`accountNumber`) VALUES ('Bob', '555-231-1123', 1);
-INSERT INTO Accounts(`status`) VALUES (1);
-INSERT INTO Users(`name`, `phoneNumber`,`accountNumber`) VALUES ('Rodrigo', '555-162-0123', 2);
+INSERT INTO Accounts(`userName`, `userPhoneNum`) VALUES ('Bob', '555-231-1123');
+INSERT INTO Accounts(`userName`, `userPhoneNum`) VALUES ('Rodrigo', '555-162-0123');
+INSERT INTO Accounts(`userName`, `userPhoneNum`) VALUES ('Meg', '555-222-1123');
+INSERT INTO Accounts(`userName`, `userPhoneNum`) VALUES ('Jane', '555-162-1111');
+INSERT INTO Accounts(`userName`, `userPhoneNum`) VALUES ('Mary', '555-123-1234');
+INSERT INTO Accounts(`userName`, `userPhoneNum`) VALUES ('Mike Robertson', '555-111-4444');
+INSERT INTO Accounts(`userName`, `userPhoneNum`) VALUES ('Kristen', '555-222-2222');
+INSERT INTO Accounts(`userName`, `userPhoneNum`) VALUES ('Luis', '555-333-0123');
+INSERT INTO Accounts(`userName`, `userPhoneNum`) VALUES ('James', '555-555-1123');
+INSERT INTO Accounts(`userName`, `userPhoneNum`) VALUES ('Victoria', '444-162-0123');
+INSERT INTO Accounts(`userName`, `userPhoneNum`) VALUES ('Tyler Anderson', '512-231-1123');
+INSERT INTO Accounts(`userName`, `userPhoneNum`) VALUES ('Brian Higgin', '421-162-0123');
+INSERT INTO Accounts(`userName`, `userPhoneNum`) VALUES ('Peter Rosenthal', '555-123-2113');
+INSERT INTO Accounts(`userName`, `userPhoneNum`) VALUES ('Mike Wazowski', '555-162-1213');
+INSERT INTO Accounts(`userName`, `userPhoneNum`) VALUES ('Clara', '511-223-1234');
 
-INSERT INTO Accounts(`status`) VALUES (1);
-INSERT INTO Users(`name`, `phoneNumber`,`accountNumber`) VALUES ('Meg', '555-222-1123', 3);
-INSERT INTO Accounts(`status`) VALUES (1);
-INSERT INTO Users(`name`, `phoneNumber`,`accountNumber`) VALUES ('Jane', '555-162-1111', 4);
 
-INSERT INTO Accounts(`status`) VALUES (1);
-INSERT INTO Users(`name`, `phoneNumber`,`accountNumber`) VALUES ('Mary', '555-123-1234', 5);
-INSERT INTO Accounts(`status`) VALUES (1);
-INSERT INTO Users(`name`, `phoneNumber`,`accountNumber`) VALUES ('Mike', '555-111-4444', 6);
+SELECT * from Accounts;
 
-INSERT INTO Accounts(`status`) VALUES (1);
-INSERT INTO Users(`name`, `phoneNumber`,`accountNumber`) VALUES ('Kristen', '555-222-2222', 7);
-INSERT INTO Accounts(`status`) VALUES (1);
-INSERT INTO Users(`name`, `phoneNumber`,`accountNumber`) VALUES ('Luis', '555-333-0123', 8);
-
-INSERT INTO Accounts(`status`) VALUES (1);
-INSERT INTO Users(`name`, `phoneNumber`,`accountNumber`) VALUES ('James', '555-555-1123', 9);
-INSERT INTO Accounts(`status`) VALUES (1);
-INSERT INTO Users(`name`, `phoneNumber`,`accountNumber`) VALUES ('Victoria', '444-162-0123', 10);
-
-SELECT * from Users;
-
-UPDATE Users
+UPDATE Accounts
 SET email = 'bob@gmail.com'
-WHERE name = 'Bob';
+WHERE userName = 'Bob';
 
-UPDATE Users
+UPDATE Accounts
 SET email = 'rodrigo@gmail.com'
 WHERE id = 2;
 
-UPDATE Users
+UPDATE Accounts
 SET email = 'meg@gmail.com'
-WHERE name = 'Meg';
+WHERE userName = 'Meg';
 
-UPDATE Users
+UPDATE Accounts
 SET email = 'jane@gmail.com'
 WHERE id = 4;
 
-UPDATE Users
+UPDATE Accounts
 SET email = 'mary@gmail.com'
 WHERE id = 5;
 
-UPDATE Users
-SET email = 'mike@gmail.com'
-WHERE name = 'Mike';
+UPDATE Accounts
+SET email = 'mikerobertson@gmail.com'
+WHERE userName = 'Mike';
 
-UPDATE Users
+UPDATE Accounts
 SET email = 'kristen@gmail.com'
 WHERE id = 7;
 
-UPDATE Users
+UPDATE Accounts
 SET email = 'luis@gmail.com'
-WHERE name = 'Luis';
+WHERE userName = 'Luis';
 
-UPDATE Users
+UPDATE Accounts
 SET email = 'james@gmail.com'
 WHERE id = 9;
 
-UPDATE Users
+UPDATE Accounts
 SET email = 'victoria@gmail.com'
 WHERE id = 10;
 
-SELECT * from Users;
+SELECT * from Accounts;
 
-DELETE from Users
-WHERE id = 1;
-
-DELETE from Users
-WHERE id = 2;
-
-DELETE from Users
-WHERE id = 3;
-
-DELETE from Users
-WHERE id = 4;
-
-DELETE from Users
+DELETE from Accounts
+WHERE userPhoneNum = '555-231-1123';
+DELETE from Accounts
+WHERE userName = 'Rodrigo';
+DELETE from Accounts
+WHERE id IN (3,4);
+DELETE from Accounts
 WHERE id = 5;
-
-DELETE from Users
-WHERE id = 6;
-
-DELETE from Users
-WHERE id = 7;
-
-DELETE from Users
+DELETE from Accounts
+WHERE userName = 'Mike Robertson';
+DELETE from Accounts
+WHERE userName = 'Clara';
+DELETE from Accounts
+WHERE userPhoneNUm = '555-162-1213';
+DELETE from Accounts
+WHERE userPhoneNUm = '555-222-2222';
+DELETE from Accounts
 WHERE id = 8;
-
-DELETE from Users
+DELETE from Accounts
 WHERE id = 9;
 
-DELETE from Users
-WHERE id = 10;
-
-SELECT * from Users;
+SELECT * from Accounts;
