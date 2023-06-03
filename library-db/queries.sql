@@ -81,3 +81,19 @@ DELETE from Accounts
 WHERE id = 9;
 
 SELECT * from Accounts;
+
+INSERT INTO Preferences(`favoriteBooks`, `favoriteDVDs`, `favoriteCDs` ) VALUES ('Harry Potter', 'Titanic, Spider-man 2, Alien', 'Nevermind, A Hard Day\'s Night');
+INSERT INTO Preferences(`favoriteBooks`, `favoriteDVDs`, `favoriteCDs` ) VALUES ('The Lord of the rings', 'Avatar, Spider-man 3', 'Appetite for destruction, The Cars');
+
+SELECT *
+FROM Accounts a 
+JOIN Preferences p ON p.idPreferences = a.idPreferences
+JOIN Loans l ON l.Accounts_id = a.id
+JOIN DVDLoans dl ON dl.idLoans = l.id
+JOIN CDLoans cl ON cl.idLoans = l.id
+JOIN BookLoans bl ON bl.idLoans = l.id
+JOIN Reservations r ON r.Accounts_id = a.id
+JOIN ItemRecommendations ir ON ir.Accounts_id = a.id
+JOIN DVDs d ON d.idItemRecommendations = ir.id
+JOIN CDs c ON c.idItemRecommendations = ir.id
+JOIN Books b ON b.idItemRecommendations = ir.id
