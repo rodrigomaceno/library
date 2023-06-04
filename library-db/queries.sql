@@ -92,6 +92,7 @@ INSERT INTO Reservations(`Accounts_id`) VALUES (10);
 INSERT INTO DVDs(`title`,`author`,`idItemRecommendations`) VALUES('Home Alone','Chris Columbus',1);
 INSERT INTO CDs(`title`,`artist`, `idItemRecommendations`) VALUES('The Bends','Radiohead',1);
 INSERT INTO Books(`isbn`,`idItemRecommendations`) VALUES('8213728713827498378597121',1);
+INSERT INTO `History`(`Accounts_id`) VALUES (10);
 
 UPDATE Accounts
 SET idPreferences = 1
@@ -113,7 +114,8 @@ JOIN Reservations r ON r.Accounts_id = a.id
 JOIN ItemRecommendations ir ON ir.Accounts_id = a.id
 JOIN DVDs d ON d.idItemRecommendations = ir.id
 JOIN CDs c ON c.idItemRecommendations = ir.id
-JOIN Books b ON b.idItemRecommendations = ir.id;
+JOIN Books b ON b.idItemRecommendations = ir.id
+JOIN `History` h ON h.Accounts_id = a.id;
 
 ALTER TABLE Accounts ADD COLUMN `activeStatus` BOOL;
 ALTER TABLE Loans ADD COLUMN `date_time` DATETIME;
