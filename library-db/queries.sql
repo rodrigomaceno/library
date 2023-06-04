@@ -67,7 +67,7 @@ WHERE id IN (3,4);
 DELETE from Accounts
 WHERE id = 5;
 DELETE from Accounts
-WHERE userName = 'Mike Robertson';
+WHERE id = 12;
 DELETE from Accounts
 WHERE userName = 'Clara';
 DELETE from Accounts
@@ -83,7 +83,9 @@ SELECT * from Accounts;
 
 INSERT INTO Preferences(`favoriteBooks`, `favoriteDVDs`, `favoriteCDs` ) VALUES ('Harry Potter', 'Titanic, Spider-man 2, Alien', 'Nevermind, A Hard Day\'s Night');
 INSERT INTO Preferences(`favoriteBooks`, `favoriteDVDs`, `favoriteCDs` ) VALUES ('The Lord of the rings', 'Avatar, Spider-man 3', 'Appetite for destruction, The Cars');
-INSERT INTO Loans(`Accounts_id`) VALUES (10);
+INSERT INTO Loans(`Accounts_id`, `numItems`) VALUES (10, 3);
+INSERT INTO Loans(`Accounts_id`, `numItems`) VALUES (11, 1);
+INSERT INTO Loans(`Accounts_id`, `numItems`) VALUES (6, 3);
 INSERT INTO DVDLoans(`copyNumber`, `idLoans`) VALUES (102, 1);
 INSERT INTO CDLoans(`copyNumber`, `idLoans`) VALUES (16, 1);
 INSERT INTO BookLoans(`copyNumber`, `idLoans`) VALUES (23, 1);
