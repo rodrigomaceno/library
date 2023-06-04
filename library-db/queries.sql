@@ -14,7 +14,6 @@ INSERT INTO Accounts(`userName`, `userPhoneNum`) VALUES ('Peter Rosenthal', '555
 INSERT INTO Accounts(`userName`, `userPhoneNum`) VALUES ('Mike Wazowski', '555-162-1213');
 INSERT INTO Accounts(`userName`, `userPhoneNum`) VALUES ('Clara', '511-223-1234');
 
-
 SELECT * from Accounts;
 
 UPDATE Accounts
@@ -102,7 +101,7 @@ UPDATE Accounts
 SET idPreferences = 2
 WHERE userName = 'Brian Higgin';
 
-
+-- 1 BIG statement to JOIN all tables
 SELECT *
 FROM Accounts a 
 JOIN Preferences p ON p.idPreferences = a.idPreferences
@@ -116,5 +115,8 @@ JOIN DVDs d ON d.idItemRecommendations = ir.id
 JOIN CDs c ON c.idItemRecommendations = ir.id
 JOIN Books b ON b.idItemRecommendations = ir.id;
 
-
-
+ALTER TABLE Accounts ADD COLUMN `activeStatus` BOOL;
+ALTER TABLE Loans ADD COLUMN `date` DATE;
+ALTER TABLE CDs DROP COLUMN releaseDate;
+ALTER TABLE DVDs RENAME COLUMN releaseDate to releaseYear;
+ALTER TABLE DVDs MODIFY COLUMN releaseYear YEAR;
