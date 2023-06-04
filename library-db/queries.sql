@@ -84,7 +84,23 @@ SELECT * from Accounts;
 
 INSERT INTO Preferences(`favoriteBooks`, `favoriteDVDs`, `favoriteCDs` ) VALUES ('Harry Potter', 'Titanic, Spider-man 2, Alien', 'Nevermind, A Hard Day\'s Night');
 INSERT INTO Preferences(`favoriteBooks`, `favoriteDVDs`, `favoriteCDs` ) VALUES ('The Lord of the rings', 'Avatar, Spider-man 3', 'Appetite for destruction, The Cars');
+INSERT INTO Loans(`Accounts_id`) VALUES (10);
+INSERT INTO DVDLoans(`copyNumber`, `idLoans`) VALUES (102, 1);
+INSERT INTO CDLoans(`copyNumber`, `idLoans`) VALUES (16, 1);
+INSERT INTO BookLoans(`copyNumber`, `idLoans`) VALUES (23, 1);
+INSERT INTO ItemRecommendations(`id`,`Accounts_id`) VALUES (1, 10);
+INSERT INTO Reservations(`Accounts_id`) VALUES (10);
+INSERT INTO DVDs(`title`,`author`,`idItemRecommendations`) VALUES('Home Alone','Chris Columbus',1);
+INSERT INTO CDs(`title`,`artist`, `idItemRecommendations`) VALUES('The Bends','Radiohead',1);
+INSERT INTO Books(`isbn`,`idItemRecommendations`) VALUES('8213728713827498378597121',1);
 
+UPDATE Accounts
+SET idPreferences = 1
+WHERE userName = 'Victoria';
+
+UPDATE Accounts
+SET idPreferences = 2
+WHERE userName = 'Brian Higgin';
 
 
 SELECT *
@@ -98,4 +114,7 @@ JOIN Reservations r ON r.Accounts_id = a.id
 JOIN ItemRecommendations ir ON ir.Accounts_id = a.id
 JOIN DVDs d ON d.idItemRecommendations = ir.id
 JOIN CDs c ON c.idItemRecommendations = ir.id
-JOIN Books b ON b.idItemRecommendations = ir.id
+JOIN Books b ON b.idItemRecommendations = ir.id;
+
+
+
