@@ -3,16 +3,19 @@ INSERT INTO Accounts(`userName`, `userPhoneNum`) VALUES ('Rodrigo', '555-162-012
 INSERT INTO Accounts(`userName`, `userPhoneNum`) VALUES ('Meg', '555-222-1123');
 INSERT INTO Accounts(`userName`, `userPhoneNum`) VALUES ('Jane', '555-162-1111');
 INSERT INTO Accounts(`userName`, `userPhoneNum`) VALUES ('Mary', '555-123-1234');
-INSERT INTO Accounts(`userName`, `userPhoneNum`) VALUES ('Mike Robertson', '555-111-4444');
+INSERT INTO Accounts(`userName`, `userPhoneNum`) VALUES ('Mike Robertson', '444-162-0123');
 INSERT INTO Accounts(`userName`, `userPhoneNum`) VALUES ('Kristen', '555-222-2222');
 INSERT INTO Accounts(`userName`, `userPhoneNum`) VALUES ('Luis', '555-333-0123');
 INSERT INTO Accounts(`userName`, `userPhoneNum`) VALUES ('James', '555-555-1123');
 INSERT INTO Accounts(`userName`, `userPhoneNum`) VALUES ('Victoria', '444-162-0123');
 INSERT INTO Accounts(`userName`, `userPhoneNum`) VALUES ('Tyler Anderson', '512-231-1123');
-INSERT INTO Accounts(`userName`, `userPhoneNum`) VALUES ('Brian Higgin', '421-162-0123');
+INSERT INTO Accounts(`userName`, `userPhoneNum`) VALUES ('Kristen', '421-162-0123');
 INSERT INTO Accounts(`userName`, `userPhoneNum`) VALUES ('Peter Rosenthal', '555-123-2113');
 INSERT INTO Accounts(`userName`, `userPhoneNum`) VALUES ('Mike Wazowski', '555-162-1213');
 INSERT INTO Accounts(`userName`, `userPhoneNum`) VALUES ('Clara', '511-223-1234');
+INSERT INTO Accounts(`userName`, `userPhoneNum`) VALUES ('Kristen', '332-222-1212');
+INSERT INTO Accounts(`userName`, `userPhoneNum`) VALUES ('Luis', '555-433-1123');
+INSERT INTO Accounts(`userName`, `userPhoneNum`) VALUES ('Luis', '511-312-0113');
 
 SELECT * from Accounts;
 
@@ -67,7 +70,7 @@ WHERE id IN (3,4);
 DELETE from Accounts
 WHERE id = 5;
 DELETE from Accounts
-WHERE id = 12;
+WHERE id = 11;
 DELETE from Accounts
 WHERE userName = 'Clara';
 DELETE from Accounts
@@ -84,7 +87,7 @@ SELECT * from Accounts;
 INSERT INTO Preferences(`favoriteBooks`, `favoriteDVDs`, `favoriteCDs` ) VALUES ('Harry Potter', 'Titanic, Spider-man 2, Alien', 'Nevermind, A Hard Day\'s Night');
 INSERT INTO Preferences(`favoriteBooks`, `favoriteDVDs`, `favoriteCDs` ) VALUES ('The Lord of the rings', 'Avatar, Spider-man 3', 'Appetite for destruction, The Cars');
 INSERT INTO Loans(`Accounts_id`, `numItems`) VALUES (10, 3);
-INSERT INTO Loans(`Accounts_id`, `numItems`) VALUES (11, 1);
+INSERT INTO Loans(`Accounts_id`, `numItems`) VALUES (16, 1);
 INSERT INTO Loans(`Accounts_id`, `numItems`) VALUES (6, 3);
 INSERT INTO DVDLoans(`copyNumber`, `idLoans`) VALUES (102, 1);
 INSERT INTO CDLoans(`copyNumber`, `idLoans`) VALUES (16, 1);
@@ -124,3 +127,14 @@ ALTER TABLE Loans ADD COLUMN `date_time` DATETIME;
 ALTER TABLE CDs DROP COLUMN releaseDate;
 ALTER TABLE DVDs RENAME COLUMN releaseDate to releaseYear;
 ALTER TABLE DVDs MODIFY COLUMN releaseYear YEAR;
+
+
+SELECT userName, COUNT(id) 
+FROM Accounts
+GROUP BY userName
+HAVING COUNT(id) > 1;
+
+SELECT userPhoneNum, COUNT(id) 
+FROM Accounts
+GROUP BY userPhoneNum
+HAVING COUNT(id) > 1;
