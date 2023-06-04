@@ -116,7 +116,7 @@ JOIN CDs c ON c.idItemRecommendations = ir.id
 JOIN Books b ON b.idItemRecommendations = ir.id;
 
 ALTER TABLE Accounts ADD COLUMN `activeStatus` BOOL;
-ALTER TABLE Loans ADD COLUMN `date` DATE;
+ALTER TABLE Loans ADD COLUMN `date_time` DATETIME;
 ALTER TABLE CDs DROP COLUMN releaseDate;
 ALTER TABLE DVDs RENAME COLUMN releaseDate to releaseYear;
 ALTER TABLE DVDs MODIFY COLUMN releaseYear YEAR;
