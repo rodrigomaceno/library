@@ -6,7 +6,6 @@ public class PreferencesRecord {
     private Integer idPreferences;
     private List<String> favoriteBooks;
     private List<String> favoriteDVDs;
-
     private List<String> favoriteCDs;
 
     public Integer getIdPreferences() {
