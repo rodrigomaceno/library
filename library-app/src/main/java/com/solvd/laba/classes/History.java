@@ -1,4 +1,4 @@
-package classes;
+package com.solvd.laba.classes;
 
 import java.util.List;
 

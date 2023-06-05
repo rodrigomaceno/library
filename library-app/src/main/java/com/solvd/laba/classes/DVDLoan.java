@@ -1,4 +1,4 @@
-package classes;
+package com.solvd.laba.classes;
 
 public class DVDLoan {
     private Loan loan;

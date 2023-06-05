@@ -1,4 +1,4 @@
-package classes;
+package com.solvd.laba.classes;
 
 public class Reservation {
     private Integer idReservations;
