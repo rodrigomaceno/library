@@ -84,8 +84,8 @@ WHERE id = 9;
 
 SELECT * from Accounts;
 
-INSERT INTO Preferences(`favoriteBooks`, `favoriteDVDs`, `favoriteCDs` ) VALUES ('Harry Potter', 'Titanic, Spider-man 2, Alien', 'Nevermind, A Hard Day\'s Night');
-INSERT INTO Preferences(`favoriteBooks`, `favoriteDVDs`, `favoriteCDs` ) VALUES ('The Lord of the rings', 'Avatar, Spider-man 3', 'Appetite for destruction, The Cars');
+INSERT INTO PreferencesRecords(`favoriteBooks`, `favoriteDVDs`, `favoriteCDs` ) VALUES ('Harry Potter', 'Titanic, Spider-man 2, Alien', 'Nevermind, A Hard Day\'s Night');
+INSERT INTO PreferencesRecords(`favoriteBooks`, `favoriteDVDs`, `favoriteCDs` ) VALUES ('The Lord of the rings', 'Avatar, Spider-man 3', 'Appetite for destruction, The Cars');
 INSERT INTO Loans(`Accounts_id`, `numItems`) VALUES (10, 3);
 INSERT INTO Loans(`Accounts_id`, `numItems`) VALUES (10, 2);
 INSERT INTO Loans(`Accounts_id`, `numItems`) VALUES (16, 1);
@@ -117,7 +117,7 @@ WHERE userName = 'Brian Higgin';
 -- 1 BIG statement to JOIN all tables
 SELECT *
 FROM Accounts a 
-JOIN Preferences p ON p.idPreferences = a.idPreferences
+JOIN PreferencesRecords p ON p.idPreferences = a.idPreferences
 JOIN Loans l ON l.Accounts_id = a.id
 JOIN DVDLoans dl ON dl.idLoans = l.id
 JOIN CDLoans cl ON cl.idLoans = l.id

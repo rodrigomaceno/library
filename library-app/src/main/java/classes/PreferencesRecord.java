@@ -2,7 +2,7 @@ package classes;
 
 import java.util.List;
 
-public class Preferences {
+public class PreferencesRecord {
     private Integer idPreferences;
     private List<String> favoriteBooks;
     private List<String> favoriteDVDs;

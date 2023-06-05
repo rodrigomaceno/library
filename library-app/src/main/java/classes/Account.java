@@ -8,7 +8,7 @@ public class Account {
 
     private String userPhoneNum;
     private String email;
-    private Preferences pref;
+    private PreferencesRecord pref;
 
     public Integer getId() {
         return id;
@@ -50,11 +50,11 @@ public class Account {
         this.email = email;
     }
 
-    public Preferences getPref() {
+    public PreferencesRecord getPref() {
         return pref;
     }
 
-    public void setPref(Preferences pref) {
+    public void setPref(PreferencesRecord pref) {
         this.pref = pref;
     }
 }
