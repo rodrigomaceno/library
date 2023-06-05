@@ -87,8 +87,15 @@ SELECT * from Accounts;
 INSERT INTO Preferences(`favoriteBooks`, `favoriteDVDs`, `favoriteCDs` ) VALUES ('Harry Potter', 'Titanic, Spider-man 2, Alien', 'Nevermind, A Hard Day\'s Night');
 INSERT INTO Preferences(`favoriteBooks`, `favoriteDVDs`, `favoriteCDs` ) VALUES ('The Lord of the rings', 'Avatar, Spider-man 3', 'Appetite for destruction, The Cars');
 INSERT INTO Loans(`Accounts_id`, `numItems`) VALUES (10, 3);
+INSERT INTO Loans(`Accounts_id`, `numItems`) VALUES (10, 2);
 INSERT INTO Loans(`Accounts_id`, `numItems`) VALUES (16, 1);
+INSERT INTO Loans(`Accounts_id`, `numItems`) VALUES (16, 2);
+INSERT INTO Loans(`Accounts_id`, `numItems`) VALUES (18, 2);
+INSERT INTO Loans(`Accounts_id`, `numItems`) VALUES (18, 3);
 INSERT INTO Loans(`Accounts_id`, `numItems`) VALUES (6, 3);
+INSERT INTO Loans(`Accounts_id`, `numItems`) VALUES (6, 2);
+INSERT INTO Loans(`Accounts_id`, `numItems`) VALUES (13, 4);
+INSERT INTO Loans(`Accounts_id`, `numItems`) VALUES (13, 4);
 INSERT INTO DVDLoans(`copyNumber`, `idLoans`) VALUES (102, 1);
 INSERT INTO CDLoans(`copyNumber`, `idLoans`) VALUES (16, 1);
 INSERT INTO BookLoans(`copyNumber`, `idLoans`) VALUES (23, 1);
@@ -138,3 +145,8 @@ SELECT userPhoneNum, COUNT(id)
 FROM Accounts
 GROUP BY userPhoneNum
 HAVING COUNT(id) > 1;
+
+SELECT Accounts_id, AVG(numItems) 
+FROM Loans
+GROUP BY Accounts_id
+HAVING AVG(numItems) > 1;
