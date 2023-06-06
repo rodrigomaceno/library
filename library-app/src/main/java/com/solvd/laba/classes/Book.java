@@ -1,11 +1,12 @@
 package com.solvd.laba.classes;
 
+import java.time.Year;
 import java.util.Date;
 
 public class Book {
     private String isbn;
     private String title;
-    private Date year;
+    private Year publishingYear;
     private String author;
     private ItemRecommendation ir;
 
