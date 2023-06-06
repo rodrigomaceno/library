@@ -3,7 +3,7 @@ package com.solvd.laba.classes;
 import java.util.List;
 
 public class PreferencesRecord {
-    private Integer idPreferences;
+    private int idPreferences;
     private List<String> favoriteBooks;
     private List<String> favoriteDVDs;
     private List<String> favoriteCDs;

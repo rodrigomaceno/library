@@ -96,9 +96,9 @@ INSERT INTO Loans(`Accounts_id`, `numItems`) VALUES (6, 3);
 INSERT INTO Loans(`Accounts_id`, `numItems`) VALUES (6, 2);
 INSERT INTO Loans(`Accounts_id`, `numItems`) VALUES (13, 4);
 INSERT INTO Loans(`Accounts_id`, `numItems`) VALUES (13, 4);
-INSERT INTO DVDLoans(`copyNumber`, `idLoans`) VALUES (102, 1);
-INSERT INTO CDLoans(`copyNumber`, `idLoans`) VALUES (16, 1);
-INSERT INTO BookLoans(`copyNumber`, `idLoans`) VALUES (23, 1);
+INSERT INTO DVDLoans(`copyNumber`, `Loans_id`) VALUES (102, 1);
+INSERT INTO CDLoans(`copyNumber`, `Loans_id`) VALUES (16, 1);
+INSERT INTO BookLoans(`copyNumber`, `Loans_id`) VALUES (23, 1);
 INSERT INTO ItemRecommendations(`id`,`Accounts_id`) VALUES (1, 10);
 INSERT INTO Reservations(`Accounts_id`) VALUES (10);
 INSERT INTO DVDs(`title`,`author`,`idItemRecommendations`) VALUES('Home Alone','Chris Columbus',1);
@@ -119,9 +119,9 @@ SELECT *
 FROM Accounts a 
 JOIN PreferencesRecords p ON p.idPreferences = a.idPreferences
 JOIN Loans l ON l.Accounts_id = a.id
-JOIN DVDLoans dl ON dl.idLoans = l.id
-JOIN CDLoans cl ON cl.idLoans = l.id
-JOIN BookLoans bl ON bl.idLoans = l.id
+JOIN DVDLoans dl ON dl.Loans_id = l.id
+JOIN CDLoans cl ON cl.Loans_id = l.id
+JOIN BookLoans bl ON bl.Loans_id = l.id
 JOIN Reservations r ON r.Accounts_id = a.id
 JOIN ItemRecommendations ir ON ir.Accounts_id = a.id
 JOIN DVDs d ON d.idItemRecommendations = ir.id

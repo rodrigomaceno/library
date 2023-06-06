@@ -3,42 +3,51 @@ package com.solvd.laba.classes;
 import java.util.List;
 
 public class History {
-    private Integer id;
-    private List<String> booksCheckedOut;
-    private List<String> dvdsCheckedOut;
-    private List<String> cdsCheckedOut;
+    private int id;
+    private List<Book> booksCheckedOut;
+    private List<DVD> dvdsCheckedOut;
+    private List<CD> cdsCheckedOut;
+    private List<Loan> loans;
     private Account acc;
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public List<String> getBooksCheckedOut() {
+    public List<Book> getBooksCheckedOut() {
         return booksCheckedOut;
     }
 
-    public void setBooksCheckedOut(List<String> booksCheckedOut) {
+    public void setBooksCheckedOut(List<Book> booksCheckedOut) {
         this.booksCheckedOut = booksCheckedOut;
     }
 
-    public List<String> getDvdsCheckedOut() {
+    public List<DVD> getDvdsCheckedOut() {
         return dvdsCheckedOut;
     }
 
-    public void setDvdsCheckedOut(List<String> dvdsCheckedOut) {
+    public void setDvdsCheckedOut(List<DVD> dvdsCheckedOut) {
         this.dvdsCheckedOut = dvdsCheckedOut;
     }
 
-    public List<String> getCdsCheckedOut() {
+    public List<CD> getCdsCheckedOut() {
         return cdsCheckedOut;
     }
 
-    public void setCdsCheckedOut(List<String> cdsCheckedOut) {
+    public void setCdsCheckedOut(List<CD> cdsCheckedOut) {
         this.cdsCheckedOut = cdsCheckedOut;
+    }
+
+    public List<Loan> getLoans() {
+        return loans;
+    }
+
+    public void setLoans(List<Loan> loans) {
+        this.loans = loans;
     }
 
     public Account getAcc() {

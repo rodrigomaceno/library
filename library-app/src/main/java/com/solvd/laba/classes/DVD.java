@@ -1,6 +1,7 @@
 package com.solvd.laba.classes;
 
 import java.util.Date;
+import java.util.List;
 
 public class DVD {
     private String title;
@@ -8,6 +9,8 @@ public class DVD {
     private Date releaseDate;
     private String genre;
     private ItemRecommendation ir;
+    private List<DVDLoan> loanList;
+    private List<Reservation> reservationList;
 
     public String getTitle() {
         return title;

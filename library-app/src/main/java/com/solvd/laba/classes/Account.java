@@ -1,28 +1,40 @@
 package com.solvd.laba.classes;
 
+import java.util.Date;
+import java.util.List;
+
 public class Account {
-    private Integer id;
-    private String dateCreated;
-
+    private int id;
+    private Date dateCreated;
     private String userName;
-
     private String userPhoneNum;
     private String email;
-    private PreferencesRecord pref;
+    private PreferencesRecord preferences;
+    private History history;
+    private List<Loan> loans;
+    private List<Reservation> reservations;
+    private List<ItemRecommendation> recommendations;
 
-    public Integer getId() {
+    public Account() {}
+
+    public Account(String userName, String userPhoneNum) {
+        this.userName = userName;
+        this.userPhoneNum = userPhoneNum;
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getDateCreated() {
+    public Date getDateCreated() {
         return dateCreated;
     }
 
-    public void setDateCreated(String dateCreated) {
+    public void setDateCreated(Date dateCreated) {
         this.dateCreated = dateCreated;
     }
 
@@ -50,11 +62,43 @@ public class Account {
         this.email = email;
     }
 
-    public PreferencesRecord getPref() {
-        return pref;
+    public PreferencesRecord getPreferences() {
+        return preferences;
     }
 
-    public void setPref(PreferencesRecord pref) {
-        this.pref = pref;
+    public void setPreferences(PreferencesRecord preferences) {
+        this.preferences = preferences;
+    }
+
+    public History getHistory() {
+        return history;
+    }
+
+    public void setHistory(History history) {
+        this.history = history;
+    }
+
+    public List<Loan> getLoans() {
+        return loans;
+    }
+
+    public void setLoans(List<Loan> loans) {
+        this.loans = loans;
+    }
+
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(List<Reservation> reservations) {
+        this.reservations = reservations;
+    }
+
+    public List<ItemRecommendation> getRecommendations() {
+        return recommendations;
+    }
+
+    public void setRecommendations(List<ItemRecommendation> recommendations) {
+        this.recommendations = recommendations;
     }
 }

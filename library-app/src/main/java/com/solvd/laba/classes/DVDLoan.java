@@ -5,6 +5,8 @@ public class DVDLoan {
     private Integer copyNumber;
     private DVD dvd;
 
+
+
     public Loan getLoan() {
         return loan;
     }
